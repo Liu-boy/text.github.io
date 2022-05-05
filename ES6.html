@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <script>
+        var a=123;
+        console.log(a)
+        let b=12;
+        for(let i=1;i<19;i++){
+console.log(b)
+        }
+        //数组解构赋值
+        let[e,f,g]=[1,2,3];
+        let[q,w,u,r,t]='hellow';
+        //对象形解构
+        let{foo,uoo}={foo:"111",uoo:"444"};
+        //原生函数
+        function f1(){
+            console.log("我是命名函数");
+        }
+        f1();
+        var f2=function () {
+console.log("我是匿名函数");
+        }
+        f2();
+        //自执行函数，只使用一次
+        (function(n1,n2){
+console.log("结果为："+(n1+n2))
+        })(10,100);
+        //ES6新增箭头函数  参数=>函数体
+let f5=x=>x+x;
+console.log(f5(10));
+let ff1=(a,b)=>{
+let num=a+b;
+console.log(num);
+};
+ff1(9,9);
+//特列：箭头函数返回值正确写法
+let ff2=(id,name)=>
+({
+id:id,
+name:name
+});
+let result=ff2(001,"xiaomi");
+console.log(result);
+//箭头函数的thisz只与定义者相关，而与调用者无关
+var str="window";
+
+const obj={
+str:"obj",
+
+native:function(){
+console.log("当前词法的this:",this.str)
+return function(){
+
+    console.log("原生函数的this",this.str)
+}
+},
+
+arrcon:function(){
+console.log("当前词法的this:",this.str)
+return ()=>{
+    console.log("箭头函数的this",this.str)
+}
+},
+
+};
+const obj2={
+    str:"obj2"
+};
+var native1=obj.native();
+
+var arrcon1=obj.arrcon();
+native1();
+arrcon1();
+//Math函数随机获取0~1（不包括1）的函数
+let radom=Math.random();
+console.log(radom);
+//向上取整函数
+ let ss=Math.ceil(12.333);
+console.log(ss);
+console.log(Math.ceil(-12.66));
+//向下取整函数
+console.log(Math.floor(12.99));
+console.log(Math.floor(-12.77));
+//四舍五入函数
+console.log(Math.round(12.5));
+console.log(Math.round(12.4));
+console.log(Math.round(-12.5));
+//绝对值函数
+console.log(Math.abs(-19));
+
+
+//圆周率和三角函数
+
+let aa=[100,100];
+let bb=[200,200];
+let x=Math.abs(aa[0]-bb[0]);
+let y=Math.abs(aa[1]-bb[1]);
+let z=Math.sqrt(x*x+y*y);
+ let angel=Math.asin(y/z)/Math.PI*180;
+ console.log( "角度为",Math.round(angel))
+ //计算平方
+ console.log(Math.pow(10,2));
+
+ //Map对象
+ //普通字符串作为key值
+ let strmap=new Map();
+ strmap.set("str1","key是string类型的值");
+ let value=strmap.get("str1");
+ console.log(value);
+ //使用对象作为key值
+ let objmap=new Map();
+ let obj1={};
+ objmap.set(obj,"obj类型作为key值")
+ let objvalue=objmap.get(obj);
+ console.log(objvalue);
+ console.log(objmap.size);
+ //Set对象储存的值总是唯一的不允许重复
+//array转换为set
+let myset=new Set(["value1","value2","value3"]);
+console.log(myset);
+//set转换为array
+let myarray=[...myset];
+console.log(myarray);
+//利用Set去除数组的重复性元素
+let myset1=new Set([1,2,3,4,4,5,5]);
+console.log(myset1);
+//并集
+let a1=new Set([1,2,3]);
+let b1=new Set([1,2,3,4,5,6]);
+let ab1=new Set([...a1,...b1]);
+console.log(ab1);
+//交集
+let aaa1=new Set([1,2,3]);
+let bbb1=new Set([1,2,3,4,5,6]);
+let union=new Set([...aaa1].filter(x=>bbb1.has(x)));
+console.log(union);
+//差集
+let aaaa1=new Set([1,2,3]);
+let bbbb1=new Set([1,2,4,5,6]);
+let difference= new Set([...aaaa1].filter(x=>!bbbb1.has(x)));
+console.log(difference);
+    </script>
+</body>
+</html>

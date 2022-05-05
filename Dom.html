@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a">访问元素</p>
+    <script>
+var a1=document.getElementById('a');
+console.log(a1);
+console.dir(a1);
+    </script>
+    <ul>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+    </ul>
+    <ol>
+        <li>ccc</li>
+        <li>fff</li>
+        <li>hhh</li>
+    </ol>
+    <script>
+        var a11=document.getElementsByTagName('li');
+        console.log(a11);
+        console.log(a11[0]);
+        var ol=document.getElementsByTagName('ol');
+        var b1=ol[0].getElementsByTagName('li')
+        console.log(b1);
+
+    </script>
+    <div class="box">
+        vvvvv
+    </div>
+    <div class="box">
+sss
+    </div>
+    <script>
+        var box=document.getElementsByClassName('box');
+        console.log(box);
+        var box1=document.querySelector('.box');
+        console.log(box1);
+        var box2=document.querySelectorAll('.box');
+        console.log(box2);
+        var d=document.body;
+        console.log(d);
+        var h=document.documentElement;
+        console.log(h);
+        console.log(document.head);
+    </script>
+</body>
+</html>
